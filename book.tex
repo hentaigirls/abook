@@ -18,6 +18,13 @@
   \ifdefined\licenseurl\CopyrightURL{\licenseurl}\fi
   \ifdefined\downloadurl\URLlink{\downloadurl}\fi
   \Date{\publishisodate}
+  %\ifprintmode
+  %% https://japancolor.jp/icc_download.html
+  %\setCMYKcolorprofile{icc/JapanColor2011Coated.icc}{JapanColor2011Coated}{Japan Color 2011 Coated}{http://www.color.org}
+  %\else
+  %% https://registry.color.org/rgb-registry/srgbprofiles
+  %\setRGBcolorprofile{icc/sRGB2014.icc}{sRGB}{sRGB v2 ICC Preference}{http://www.color.org}
+  %\fi
 \end{filecontents*}
 
 % flags and infomation
@@ -77,12 +84,16 @@ jafontsize=8.8pt,baselineskip=14.965pt,head_space=16mm
 \fi
 \usepackage{pdfpages}
 \usepackage{amsfonts}
-\usepackage[pdfdirection=R2L]{hyperref}
+\ifprintmode
+\usepackage[pdfdirection=R2L,pdfversion=1.3]{hyperref}
+\else
+\usepackage[pdfdirection=R2L,pdfversion=1.7,pdfa]{hyperref}
+\fi
 \usepackage{titlesec}
 \usepackage{tocloft}
 
 % documentinfomation
-\renewcommand{\contentsname}{もくじ}
+\renewcommand{\contentsname}{\booktitle}
 \title{\booktitle}
 \author{\bookauthor}
 \date{\publishdate}
