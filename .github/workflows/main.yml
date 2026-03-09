@@ -1,4 +1,4 @@
-name: 'build a5book template'
+name: 'build abook template'
 
 on: [push, pull_request]
 

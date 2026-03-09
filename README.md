@@ -1,6 +1,6 @@
 # abook
 
-![GitHub Action status](https://github.com/hentaigirls/abook/workflows/build%20a5book%20template/badge.svg)
+![GitHub Action status](https://github.com/hentaigirls/abook/workflows/build%20abook%20template/badge.svg)
 
 ## 使い方
 
@@ -17,7 +17,7 @@
 1. `./work/<author>/<title>/main.tex` を編集します。
 1. `./work/<author>/<title>/LICENSE` に適切なライセンス表示を追加します。
 1. `./work/input.tex` に `\input{./work/<author>/<title>/main.tex}` を追加するか、 `./script/make_story_list.sh` を実行します。なお、 `./work/input.tex` はgitで管理されていません。
-1. `llmk book.tex` を実行するか、push後にCIの結果を確認します。
+1. `llmk book.tex` または `docker run --rm -v .:/data amane/lualatex-latexmk llmk book.tex` を実行するか、push後にCIの結果を確認します。
 
 ### 表紙を追加する人
 
